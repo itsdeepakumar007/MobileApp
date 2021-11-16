@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:background="@android:color/white"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="@dimen/cell_width"
+        android:id="@+id/txtBranchName"
+        android:layout_marginStart="@dimen/margin"
+        android:gravity="center|start"
+        android:textColor="@color/white"
+        android:layout_height="match_parent"/>
+
+
+
+    <TextView
+        android:layout_width="@dimen/cell_width"
+        android:id="@+id/txtPincode"
+        android:layout_marginStart="@dimen/margin"
+        android:gravity="center|start"
+        android:textColor="@color/white"
+        android:layout_height="match_parent"/>
+
+    <TextView
+        android:layout_width="@dimen/cell_width"
+        android:id="@+id/txtCity"
+        android:layout_marginStart="@dimen/margin"
+        android:gravity="center|start"
+        android:textColor="@color/white"
+        android:layout_height="match_parent"/>
+
+    <TextView
+        android:layout_width="@dimen/cell_width"
+        android:id="@+id/txtState"
+        android:layout_marginStart="@dimen/margin"
+        android:gravity="center|start"
+        android:textColor="@color/white"
+        android:layout_height="match_parent"/>
+
+    <TextView
+        android:layout_width="@dimen/cell_width"
+        android:id="@+id/txtCountry"
+        android:layout_marginStart="@dimen/margin"
+        android:gravity="center|start"
+        android:textColor="@color/white"
+        android:layout_height="match_parent"/>
+
+
+    <TextView
+        android:layout_width="@dimen/cell_width"
+        android:id="@+id/txtDistrictName"
+        android:layout_marginStart="@dimen/margin"
+        android:gravity="center|start"
+        android:textColor="@color/white"
+        android:layout_height="match_parent"/>
+
+
+    <TextView
+        android:layout_width="@dimen/cell_width"
+        android:id="@+id/txtTDD"
+        android:layout_marginStart="@dimen/margin"
+        android:gravity="center|start"
+        android:textColor="@color/white"
+        android:layout_height="match_parent"/>
+
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_margin="@dimen/margin"
+        android:contentDescription="Submit"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:background="@drawable/submit_icon"
+        android:scaleType="centerCrop"
+        android:id="@+id/hand_submit"/>
+
+
+</LinearLayout>

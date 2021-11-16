@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+<LinearLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".PackageInfoFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="4"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Package Information"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="16dp"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="4"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/black" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+
+        <CheckBox
+            android:id="@+id/experss_pickup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Express PickUp"
+            android:textColor="@color/basic"
+            android:buttonTint="@color/basic"
+            android:checked="false"/>
+
+        <CheckBox
+            android:id="@+id/premium_pickup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Premium PickUp"
+            android:textColor="@color/basic"
+            android:buttonTint="@color/basic"
+            android:checked="false"/>
+
+        <CheckBox
+            android:id="@+id/normal_pickup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Normal PickUp"
+            android:textColor="@color/basic"
+            android:buttonTint="@color/basic"
+            android:checked="false"/>
+
+        <TextView
+            android:id="@+id/check_tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:visibility="gone"
+            android:textColor="@color/black"
+            android:textSize="16dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/basic"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            app:hintTextAppearance="@style/MyAppearance">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/total_pkg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="No. of Packages"
+                android:background="@drawable/edittext_bg_selector" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/basic"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:padding="10dp"
+            app:hintTextAppearance="@style/MyAppearance">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/weight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Total Weight"
+                android:background="@drawable/edittext_bg_selector" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal">
+
+        <Spinner
+            android:id="@+id/shipment_type"
+            style="@style/Widget.AppCompat.Spinner"
+            android:layout_width="180dp"
+            android:layout_height="?attr/dropdownListPreferredItemHeight"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/spinner_bg"
+            android:dropDownWidth="match_parent"
+            android:dropDownVerticalOffset="?attr/dropdownListPreferredItemHeight"
+            android:paddingRight="14dp"
+            android:popupBackground="@android:color/white"
+            android:popupElevation="3dp"
+            android:stateListAnimator="@drawable/spinner_sla"/>
+
+        <Spinner
+            android:id="@+id/measurement"
+            style="@style/Widget.AppCompat.Spinner"
+            android:layout_width="180dp"
+            android:layout_height="?attr/dropdownListPreferredItemHeight"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/spinner_bg"
+            android:dropDownWidth="match_parent"
+            android:dropDownVerticalOffset="?attr/dropdownListPreferredItemHeight"
+            android:paddingRight="14dp"
+            android:popupBackground="@android:color/white"
+            android:popupElevation="3dp"
+            android:stateListAnimator="@drawable/spinner_sla"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal">
+
+
+        <Spinner
+            android:id="@+id/ready_time"
+            style="@style/Widget.AppCompat.Spinner"
+            android:layout_width="180dp"
+            android:layout_height="?attr/dropdownListPreferredItemHeight"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/spinner_bg"
+            android:dropDownWidth="match_parent"
+            android:dropDownVerticalOffset="?attr/dropdownListPreferredItemHeight"
+            android:paddingRight="14dp"
+            android:popupBackground="@android:color/white"
+            android:popupElevation="3dp"
+            android:stateListAnimator="@drawable/spinner_sla"/>
+
+        <Spinner
+            android:id="@+id/latest_time"
+            style="@style/Widget.AppCompat.Spinner"
+            android:layout_width="180dp"
+            android:layout_height="?attr/dropdownListPreferredItemHeight"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/spinner_bg"
+            android:dropDownWidth="match_parent"
+            android:dropDownVerticalOffset="?attr/dropdownListPreferredItemHeight"
+            android:paddingRight="14dp"
+            android:popupBackground="@android:color/white"
+            android:popupElevation="3dp"
+            android:stateListAnimator="@drawable/spinner_sla"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/basic"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            app:hintTextAppearance="@style/MyAppearance">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pickup_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="PickUp Date"
+                android:autofillHints="PickUp Date"
+                android:focusable="false"
+                android:layout_weight="1"
+                android:inputType="date"
+                android:background="@drawable/edittext_bg_selector" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/basic"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:padding="10dp"
+            app:hintTextAppearance="@style/MyAppearance">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pickup_noti"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Pickup Notification"
+                android:background="@drawable/edittext_bg_selector" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/basic"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:padding="10dp"
+        app:hintTextAppearance="@style/MyAppearance">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/sp_inst"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Location of package or special instruction"
+            android:background="@drawable/edittext_bg_selector" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/submit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="80dp"
+        android:text="Submit PickUp"
+        android:layout_gravity="center"
+        android:background="@drawable/button"/>
+
+</LinearLayout>
+</ScrollView>

@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <com.shuhart.stepview.StepView
+        android:id="@+id/step_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        app:sv_animationType="Line"
+        app:sv_doneCircleColor="@color/basic"
+        app:sv_doneCircleRadius="12dp"
+        app:sv_doneStepLineColor="@color/basic"
+        app:sv_doneStepMarkColor="@color/white"
+        app:sv_nextStepLineColor="@color/basic"
+        app:sv_nextTextColor="@color/basic"
+        app:sv_selectedCircleColor="@color/basic"
+        app:sv_selectedCircleRadius="12dp"
+        app:sv_selectedStepNumberColor="@color/white"
+        app:sv_selectedTextColor="@color/basic"
+        app:sv_stepLineWidth="1dp"
+        app:sv_stepNumberTextSize="12sp"
+        app:sv_stepPadding="4dp"
+        app:sv_stepViewStyle="@style/StepView" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal">
+
+        <Spinner
+            android:id="@+id/packaging_type"
+            style="@style/Widget.AppCompat.Spinner"
+            android:layout_width="180dp"
+            android:layout_height="?attr/dropdownListPreferredItemHeight"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/spinner_bg"
+            android:dropDownWidth="match_parent"
+            android:dropDownVerticalOffset="?attr/dropdownListPreferredItemHeight"
+            android:paddingRight="14dp"
+            android:popupBackground="@android:color/white"
+            android:popupElevation="3dp"
+            android:stateListAnimator="@drawable/spinner_sla"/>
+
+        <Spinner
+            android:id="@+id/service_type"
+            style="@style/Widget.AppCompat.Spinner"
+            android:layout_width="180dp"
+            android:layout_height="?attr/dropdownListPreferredItemHeight"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/spinner_bg"
+            android:dropDownWidth="match_parent"
+            android:dropDownVerticalOffset="?attr/dropdownListPreferredItemHeight"
+            android:paddingRight="14dp"
+            android:popupBackground="@android:color/white"
+            android:popupElevation="3dp"
+            android:stateListAnimator="@drawable/spinner_sla"/>
+
+
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/basic"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:padding="10dp"
+        app:hintTextAppearance="@style/MyAppearance">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/total_weight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Total Weight(in Kg)"
+            android:inputType="number"
+            android:background="@drawable/edittext_bg_selector" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:weightSum="5">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Length"
+            android:textColor="@color/white"
+            android:background="@color/basic"
+            android:layout_weight="1"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Width"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="@color/white"
+            android:background="@color/basic"
+            android:layout_weight="1"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Height"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="@color/white"
+            android:background="@color/basic"
+            android:layout_weight="1"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Weight(L*W*H)"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="@color/white"
+            android:background="@color/basic"
+            android:layout_weight="2"
+            android:gravity="center"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        android:weightSum="5">
+
+        <EditText
+            android:id="@+id/et_length"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_bg_selector"
+            android:layout_weight="1"
+            android:inputType="number"
+            android:textCursorDrawable="@null"
+            android:layout_marginEnd="2dp"
+            android:imeOptions="actionNext"
+            android:padding="5dp"/>
+
+        <EditText
+            android:id="@+id/et_width"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_bg_selector"
+            android:layout_weight="1"
+            android:inputType="number"
+            android:textCursorDrawable="@null"
+            android:layout_marginEnd="2dp"
+            android:imeOptions="actionNext"
+            android:padding="5dp"/>
+
+        <EditText
+            android:id="@+id/et_height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_bg_selector"
+            android:layout_weight="1"
+            android:inputType="number"
+            android:textCursorDrawable="@null"
+            android:layout_marginEnd="2dp"
+            android:imeOptions="actionNext"
+            android:padding="5dp"/>
+
+        <EditText
+            android:id="@+id/et_weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_bg_selector"
+            android:layout_weight="2"
+            android:inputType="number"
+            android:textCursorDrawable="@null"
+            android:padding="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:weightSum="3"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Code"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:textColor="@color/white"
+            android:background="@color/basic"
+            android:layout_weight="1"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:textColor="@color/white"
+            android:background="@color/basic"
+            android:layout_weight="1"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Made In"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:textColor="@color/white"
+            android:background="@color/basic"
+            android:layout_weight="1"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        android:weightSum="3">
+
+        <EditText
+            android:id="@+id/et_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_bg_selector"
+            android:layout_weight="1"
+            android:textCursorDrawable="@null"
+            android:layout_marginEnd="2dp"
+            android:padding="5dp"/>
+
+        <EditText
+            android:id="@+id/et_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_bg_selector"
+            android:layout_weight="1"
+            android:textCursorDrawable="@null"
+            android:layout_marginEnd="2dp"
+            android:padding="5dp"/>
+
+        <EditText
+            android:id="@+id/et_madein"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_bg_selector"
+            android:layout_weight="1"
+            android:textCursorDrawable="@null"
+            android:layout_marginEnd="2dp"
+            android:padding="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+
+        <CheckBox
+            android:id="@+id/time_definite_delivery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Time Definite Delivery"
+            android:textColor="@color/basic"
+            android:buttonTint="@color/basic"
+            android:checked="false"/>
+
+        <CheckBox
+            android:id="@+id/saturday_delivery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Saturday Delivery"
+            android:textColor="@color/basic"
+            android:buttonTint="@color/basic"
+            android:checked="false"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+
+        <CheckBox
+            android:id="@+id/perfic_delivery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Perfic Delivery Signature option"
+            android:textColor="@color/basic"
+            android:buttonTint="@color/basic"
+            android:checked="false"/>
+
+        <CheckBox
+            android:id="@+id/hold_at_perfic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Hold at Perfic Location"
+            android:textColor="@color/basic"
+            android:buttonTint="@color/basic"
+            android:checked="false"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal">
+
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_back"
+            android:layout_marginEnd="10dp"/>
+
+        <Button
+            android:id="@+id/next"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_next"
+            android:layout_marginStart="10dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

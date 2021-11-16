@@ -1,0 +1,81 @@
+<resources>
+    <string name="app_name">ZSCS</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="sql">Press Button</string>
+    <string name="email_error">Email Error!</string>
+    <string name="error_invalid_email">Please enter the coreect email</string>
+    <string name="password_error">Enter your password</string>
+    <string name="error_invalid_password">Please enter the correct password</string>
+    <string name="error_wrong_email">Wrong credentials!</string>
+    <string name="error_wrong_password">Wrong Credentials!</string>
+    <string name="name_error">Enter your name!</string>
+    <string name="mobile_error">Enter the mobile number</string>
+    <string name="logout">Logout</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="openDrawer">open_drawer</string>
+    <string name="closeDrawer">close_drawer</string>
+
+    <!-- Navigation Drawer menu labels -->
+    <string name="nav_home">Home</string>
+    <string name="nav_photos">Photos</string>
+    <string name="nav_movies">Movies</string>
+    <string name="nav_notifications">Notifications</string>
+    <string name="nav_settings">Settings</string>
+    <string name="nav_about_us">About Us</string>
+
+    <!-- Toolbar titles when navigation menu item is selected -->
+    <string-array name="nav_item_activity_titles">
+        <item>Home</item>
+        <item>Settings</item>
+    </string-array>
+
+    <string name="activity_title_about_us">About Us</string>
+    <string name="activity_title_privacy_policy">Privacy Policy</string>
+    <string name="action_clear_all">Clear All</string>
+    <string name="action_logout">Logout</string>
+    <string name="action_mark_all_read">Mark All as Read</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="home">Home</string>
+    <string name="pickup_details">Pickup Details</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="company_name_error">Enter Company Name!</string>
+    <string name="address_error">Enter your address!</string>
+    <string name="postal_code_error">Enter your pincode!</string>
+    <string name="city_error">Enter your city</string>
+    <string name="totalpkg_error">Enter the no. of packages!</string>
+    <string name="totalweight_error">Enter the total weight!</string>
+    <string name="role_error">Choose your role!</string>
+    <string name="dob">Enter the date!</string>
+    <string name="number">Enter the number!</string>
+    <string name="exp_error">Enter the total experience!</string>
+    <string name="branch_error">Choose your Branch Company!</string>
+    <string name="designtaion_error">Enter your designation!</string>
+    <string name="skill_error">Enter your skills!</string>
+    <string name="btn_next">Next</string>
+    <string name="btn_back">Back</string>
+    <string name="action_search">Search</string>
+    <string name="pincode_error">Enter the valid pincode!</string>
+    <string name="hint_search">Search by Pincode</string>
+    <string name="state_error">Enter the state!</string>
+    <string name="length">Enter the length!</string>
+    <string name="width">Enter the Width!</string>
+    <string name="height">Enter the height!</string>
+    <string name="weight">Enter the weight!</string>
+    <string name="code">Enter the code!</string>
+    <string name="desc">Enter the description!</string>
+    <string name="madeIn">Enter the madeIn!</string>
+    <string name="service_type">Select the service type!</string>
+    <string name="invoice">Enter the invoice value!</string>
+
+</resources>

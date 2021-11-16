@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".ManageProfileFragment"
+        android:orientation="vertical">
+
+    <Spinner
+        android:id="@+id/head_company"
+        style="@style/Widget.AppCompat.Spinner"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/dropdownListPreferredItemHeight"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/spinner_bg"
+        android:dropDownWidth="match_parent"
+        android:dropDownVerticalOffset="?attr/dropdownListPreferredItemHeight"
+        android:paddingRight="14dp"
+        android:popupBackground="@android:color/white"
+        android:popupElevation="3dp"
+        android:stateListAnimator="@drawable/spinner_sla" />
+
+        <TextView
+            android:id="@+id/role_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/spinner_bg"
+            android:stateListAnimator="@drawable/spinner_sla"
+            android:drawablePadding="16dp"
+            android:textColorHint="@color/basic"
+            android:textColor="@color/basic"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:hint="Select Role"
+            android:padding="12dp"
+            android:drawableRight="@color/basic"
+            app:drawableRightCompat="@drawable/abc_spinner_mtrl_am_alpha" />
+
+        <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal">
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/basic"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            app:hintTextAppearance="@style/MyAppearance">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name"
+                android:background="@drawable/edittext_bg_selector" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/basic"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            app:hintTextAppearance="@style/MyAppearance">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/mobile_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Mobile Number"
+                android:background="@drawable/edittext_bg_selector" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/basic"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                app:hintTextAppearance="@style/MyAppearance">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/dob"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="PickUp Date"
+                    android:focusable="false"
+                    android:layout_weight="1"
+                    android:hint="Date of Birth"
+                    android:inputType="date"
+                    android:background="@drawable/edittext_bg_selector" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/basic"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                app:hintTextAppearance="@style/MyAppearance">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/pan_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Pan Number"
+                    android:background="@drawable/edittext_bg_selector" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/basic"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                app:hintTextAppearance="@style/MyAppearance">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/passport_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Passport Number"
+                    android:background="@drawable/edittext_bg_selector" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/basic"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                app:hintTextAppearance="@style/MyAppearance">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/total_exp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Total Experience"
+                    android:inputType="number"
+                    android:background="@drawable/edittext_bg_selector" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+
+        <Spinner
+            android:id="@+id/invoice"
+            style="@style/Widget.AppCompat.Spinner"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/dropdownListPreferredItemHeight"
+            android:layout_margin="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/spinner_bg"
+            android:dropDownWidth="match_parent"
+            android:dropDownVerticalOffset="?attr/dropdownListPreferredItemHeight"
+            android:paddingRight="14dp"
+            android:popupBackground="@android:color/white"
+            android:popupElevation="3dp"
+            android:stateListAnimator="@drawable/spinner_sla" />
+
+        <TextView
+            android:id="@+id/branch_company"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/spinner_bg"
+            android:stateListAnimator="@drawable/spinner_sla"
+            android:drawablePadding="16dp"
+            android:textColorHint="@color/basic"
+            android:textColor="@color/basic"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:hint="Select Branch Company"
+            android:padding="12dp"
+            android:drawableRight="@color/basic"
+            app:drawableRightCompat="@drawable/abc_spinner_mtrl_am_alpha" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/basic"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                app:hintTextAppearance="@style/MyAppearance">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/email_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email Id"
+                    android:background="@drawable/edittext_bg_selector" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/basic"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                app:hintTextAppearance="@style/MyAppearance">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/designation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Designation"
+                    android:background="@drawable/edittext_bg_selector" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/basic"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                app:hintTextAppearance="@style/MyAppearance">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Address"
+                    android:background="@drawable/edittext_bg_selector" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/basic"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                app:hintTextAppearance="@style/MyAppearance">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/doj"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Date of Joining"
+                    android:autofillHints="PickUp Date"
+                    android:focusable="false"
+                    android:layout_weight="1"
+                    android:inputType="date"
+                    android:background="@drawable/edittext_bg_selector" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/basic"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                app:hintTextAppearance="@style/MyAppearance">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/aadhar_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Aadhar Number"
+                    android:background="@drawable/edittext_bg_selector" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/basic"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                app:hintTextAppearance="@style/MyAppearance">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/skill"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Primary Skill"
+                    android:background="@drawable/edittext_bg_selector" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/basic"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:padding="10dp"
+                app:hintTextAppearance="@style/MyAppearance">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/reporting_manager"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Reporting Manager"
+                    android:background="@drawable/edittext_bg_selector" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <Spinner
+            android:id="@+id/account_type"
+            style="@style/Widget.AppCompat.Spinner"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/dropdownListPreferredItemHeight"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/spinner_bg"
+            android:dropDownWidth="match_parent"
+            android:dropDownVerticalOffset="?attr/dropdownListPreferredItemHeight"
+            android:paddingRight="14dp"
+            android:popupBackground="@android:color/white"
+            android:popupElevation="3dp"
+            android:stateListAnimator="@drawable/spinner_sla" />
+
+
+
+        <Button
+            android:id="@+id/submit_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginEnd="80dp"
+            android:layout_marginBottom="20dp"
+            android:text="Submit" />
+
+
+    </LinearLayout>
+</ScrollView>
