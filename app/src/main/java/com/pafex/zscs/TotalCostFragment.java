@@ -54,9 +54,11 @@ public class TotalCostFragment extends Fragment {
     private String r_company_name, r_email, r_phone_no, r_address1, r_address2, r_address3, r_pincode, r_state, r_city, r_state_id, r_city_id;
     private String packaging_type, length, width, weight, height, code, desc, madeIn, check_tv1, check_tv2, check_tv3, check_tv4;
     private boolean isValid;
+    private String shipper_id, recipient_id;
     private String sp_handling;
     private Connection connect;
     private float invoice;
+    private String currentDateandTime;
 
     public TotalCostFragment() {
         // Required empty public constructor
@@ -238,6 +240,8 @@ public class TotalCostFragment extends Fragment {
         desc = preferences.getString("Desc","");
         madeIn = preferences.getString("MadeIn","");
         sp_handling = preferences.getString("Special Handling","");
+        shipper_id = preferences.getString("Shipper ID", "");
+        recipient_id = preferences.getString("Recipient ID","");
 
     }
 
@@ -332,6 +336,7 @@ public class TotalCostFragment extends Fragment {
                     z = "On Internet Connection";
                 } else{
 
+                    String volweigh = String.format("%.2f",vol_weig2);
                     String sql1 = "INSERT INTO Shipper (vc_UserCode,vc_UserCompanyCode,vc_UserCompanyName,vc_PreFix,vc_CompanyName," +
                             "vc_Address1,vc_Address2,vc_Address3,vc_CountryID,vc_CountryName,vc_StateID,vc_StateName,vc_CityID,vc_CityName," +
                             "vc_PinCode,vc_Email,vc_PhoneNumber1,b_Active,vc_ShipmentType) " +
@@ -349,15 +354,15 @@ public class TotalCostFragment extends Fragment {
                             "'" + r_email +"', '" + r_phone_no +"', '" + 1 +"', + '" + "D" +"')";
 
                     String sql3 = "INSERT INTO Shipment (vc_UserCode,vc_UserCompanyCode,vc_UserCompanyName,PreFix,vc_SpecialHandling," +
-                            "ServiceID,ServiceName,vc_ShipmentStatus,vc_ShipmentType,vc_CurrencyID," +
+                            "ServiceID,ServiceName,vc_ShipperID,vc_RecipientID,vc_ShipmentStatus,vc_ShipmentType,vc_CurrencyID," +
                             "vc_CurrencyName,vc_InvoiceValue,vc_InvoiceValueWhole,vc_ShipmentVolumeWeight," +
                             "vc_ShipmentVolumeWeightWhole,vc_ShipmentTotalWeight,vc_ChargeableWeight,vc_WeightMeasurementUnit,vc_WeightMeasurement," +
                             "vc_Transport) " +
                             "VALUES ('" + "ZUSR0000001" +"', '" + "ZSCS" +"', '" + "ZSCS" +"', '" + "ZSR" +"'," +
-                            "'" + sp_handling +"', '" + 1 + "' , '" + 0 + "' , '" + "New" + "', '" + "D" +"', '" + "INR" +"', '" + "INR" +"'," +
-                            "'" + et_iv.getText() +"', '" + invoice + "', '" + vol_weight.getText() + "', '" + vol_weig +"'," +
+                            "'" + sp_handling +"', '" + 1 + "' , '" + 0 + "' ,'" + shipper_id + "','" + recipient_id + "', '" + "New" + "', '" + "D" +"', '" + "INR" +"', '" + "INR" +"'," +
+                            "'" + et_iv.getText() +"', '" + invoice + "', '" + vol_weight.getText() + "', '" + volweigh +"'," +
                             "'" + et_tw.getText() +"', '" + et_cw.getText() +"', '" + "Kg" +"', + '" + "Kg" +"', " +
-                            "'" + service_type +"')";
+                            "'" + service_type2 +"')";
 
 
                     PreparedStatement statement1 = connect.prepareStatement(sql1);
@@ -375,17 +380,19 @@ public class TotalCostFragment extends Fragment {
                             Toast.makeText(getContext(), "Shipment details are saved successfully!",Toast.LENGTH_SHORT).show();
                         }
                     });
-                    String backStateName = this.getClass().getName();
-                    AppCompatActivity activity = (AppCompatActivity) getContext();
-                    Fragment fragment = new HomeFragment();
-                    FragmentManager fragmentManager = activity.getSupportFragmentManager();
-                    boolean fragmentPopped = fragmentManager.popBackStackImmediate(backStateName, 0);
-                    if (!fragmentPopped) {
-                        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                        fragmentTransaction.replace(R.id.frame, fragment);
-                        fragmentTransaction.addToBackStack(backStateName);
-                        fragmentTransaction.commit();
-                    }
+
+                }
+
+                String backStateName = this.getClass().getName();
+                AppCompatActivity activity = (AppCompatActivity) getContext();
+                Fragment fragment = new HomeFragment();
+                FragmentManager fragmentManager = activity.getSupportFragmentManager();
+                boolean fragmentPopped = fragmentManager.popBackStackImmediate(backStateName, 0);
+                if (!fragmentPopped) {
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.frame, fragment);
+                    fragmentTransaction.addToBackStack(backStateName);
+                    fragmentTransaction.commit();
                 }
 
             } catch (Exception e) {

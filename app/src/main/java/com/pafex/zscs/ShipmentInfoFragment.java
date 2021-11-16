@@ -249,16 +249,16 @@ public class ShipmentInfoFragment extends Fragment {
             public void onClick(View v) {
                 List<String> sp_handlingList = new ArrayList<String>();
                 if(tdd.isChecked()){
-                    sp_handlingList.add("category_id=1");
+                    sp_handlingList.add("1");
                 }
                 if(sd.isChecked()){
-                    sp_handlingList.add("category_id=2");
+                    sp_handlingList.add("2");
                 }
                 if(pdso.isChecked()){
-                    sp_handlingList.add("category_id=3");
+                    sp_handlingList.add("3");
                 }
                 if(hpl.isChecked()){
-                    sp_handlingList.add("category_id=4");
+                    sp_handlingList.add("4");
                 }
                 String[] sp_handling = sp_handlingList.toArray(new String[sp_handlingList.size()]);
 

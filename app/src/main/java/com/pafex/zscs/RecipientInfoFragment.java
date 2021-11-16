@@ -59,6 +59,7 @@ public class RecipientInfoFragment extends Fragment {
     private String city_str, state_str,pincode_str;
     private StepView stepView;
     private String state_id, city_id;
+    private String recipient_id;
 
     public RecipientInfoFragment() {
         // Required empty public constructor
@@ -121,6 +122,9 @@ public class RecipientInfoFragment extends Fragment {
         }
         showSetpView0();
         new RecipientInfoFragment.checkCountry().execute("");
+        new RecipientInfoFragment.checkState().execute("");
+        new RecipientInfoFragment.checkCity().execute("");
+        new RecipientInfoFragment.getRecipientId().execute("");
         pincode_go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -183,8 +187,7 @@ public class RecipientInfoFragment extends Fragment {
             public void onClick(View view) {
                 isValid = SetValidation1();
                 if(isValid){
-                    new RecipientInfoFragment.checkState().execute();
-                    new RecipientInfoFragment.checkCity().execute();
+
                     SharedPreferences preferences = getActivity().getSharedPreferences("Shipping_Prefs", Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = preferences.edit();
                     editor.putString("R_Company Name",company_name.getText().toString());
@@ -198,6 +201,7 @@ public class RecipientInfoFragment extends Fragment {
                     editor.putString("R_City",city.getText().toString());
                     editor.putString("R_State ID",state_id);
                     editor.putString("R_City ID",city_id);
+                    editor.putString("Recipient ID",recipient_id);
                     editor.apply();
                     String backStateName = this.getClass().getName();
                     AppCompatActivity activity = (AppCompatActivity) rootView.getContext();
@@ -366,11 +370,12 @@ public class RecipientInfoFragment extends Fragment {
                 Toast.makeText(getContext(), "Check Internet Connection!", Toast.LENGTH_SHORT).show();
             } else {
                 try {
-                    String query = "select * from StateMaster where Name = '" + state.getText() +"'";
+                    String query = "SELECT *\n" +
+                            "  FROM [ZSCS].[dbo].[StateMaster]\n" +
+                            "WHERE [Name] = '" + state.getText() +"'";
                     stmt = connect.prepareStatement(query);
                     rs = stmt.executeQuery();
                     Log.v(query,"query");
-                    ArrayList<String> data = new ArrayList<>();
 
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
@@ -378,28 +383,10 @@ public class RecipientInfoFragment extends Fragment {
                             try {
                                 while (rs.next()) {
                                     state_id = rs.getString("ID");
-                                    data.add(state_id);
-                                    Log.v(state_id,"stateid");
                                 }
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
-
-                            String[] array = data.toArray(new String[0]);
-                            ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), R.layout.spinner_item_selected, array);
-                            adapter.setDropDownViewResource(R.layout.spinner_dropdown);
-                            country.setAdapter(adapter);
-                            country.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                                @Override
-                                public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                                    country_selectedValue = adapterView.getItemAtPosition(i).toString();
-                                }
-
-                                @Override
-                                public void onNothingSelected(AdapterView<?> adapterView) {
-
-                                }
-                            });
 
                         }
                     });
@@ -429,7 +416,53 @@ public class RecipientInfoFragment extends Fragment {
                 Toast.makeText(getContext(), "Check Internet Connection!", Toast.LENGTH_SHORT).show();
             } else {
                 try {
-                    String query = "select * from CityMaster where Name = '" + city.getText() +"'";
+                    String query = "SELECT *\n" +
+                            "  FROM [ZSCS].[dbo].[CityMaster]\n" +
+                            "WHERE [Name] = '" + city.getText() +"'";
+                    stmt = connect.prepareStatement(query);
+                    rs = stmt.executeQuery();
+                    Log.v(query,"query");
+
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            try {
+                                while (rs.next()) {
+                                    city_id = rs.getString("ID");
+                                }
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
+                    z="Success";
+
+                }catch (Exception e){
+                    isSuccess = false;
+                    Log.e("SQL Error : ", e.getMessage());
+                }
+
+            }
+            return z;
+        }
+    }
+
+    public class getRecipientId extends AsyncTask<String, String, String> {
+
+        String z = null;
+        Boolean isSuccess = false;
+
+        @SuppressLint("LongLogTag")
+        @Override
+        protected String doInBackground(String... strings) {
+            ConnectionHelper connectionHelper = new ConnectionHelper();
+            connect = connectionHelper.conclass();
+            if (connect == null) {
+                Toast.makeText(getContext(), "Check Internet Connection!", Toast.LENGTH_SHORT).show();
+            } else {
+                try {
+                    String query = "SELECT *\n" +
+                            "  FROM [ZSCS].[dbo].[Recipient]";
                     stmt = connect.prepareStatement(query);
                     rs = stmt.executeQuery();
                     Log.v(query,"query");
@@ -440,29 +473,11 @@ public class RecipientInfoFragment extends Fragment {
                         public void run() {
                             try {
                                 while (rs.next()) {
-                                    city_id = rs.getString("ID");
-                                    data.add(city_id);
-                                    Log.v(city_id,"stateid");
+                                    recipient_id = rs.getString("vc_RecipientID");
                                 }
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
-
-                            String[] array = data.toArray(new String[0]);
-                            ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), R.layout.spinner_item_selected, array);
-                            adapter.setDropDownViewResource(R.layout.spinner_dropdown);
-                            country.setAdapter(adapter);
-                            country.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                                @Override
-                                public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                                    country_selectedValue = adapterView.getItemAtPosition(i).toString();
-                                }
-
-                                @Override
-                                public void onNothingSelected(AdapterView<?> adapterView) {
-
-                                }
-                            });
 
                         }
                     });
@@ -477,6 +492,7 @@ public class RecipientInfoFragment extends Fragment {
             return z;
         }
     }
+
 
     @Override
     public void onResume() {
